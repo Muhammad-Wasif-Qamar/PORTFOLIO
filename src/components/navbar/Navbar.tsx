@@ -23,7 +23,6 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      // Simple intersection observer logic for active section
       const sections = navLinks.map(link => link.href.substring(1));
       for (const section of sections.reverse()) {
         const el = document.getElementById(section);
@@ -44,20 +43,19 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "py-4 bg-background-primary/80 backdrop-blur-lg border-b border-foreground-primary/5 shadow-lg shadow-foreground-primary/[0.03]"
-          : "py-6 bg-transparent"
+          ? "py-3 sm:py-4 bg-background-primary/80 backdrop-blur-lg border-b border-foreground-primary/5 shadow-lg shadow-foreground-primary/[0.03]"
+          : "py-4 sm:py-6 bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <Link 
           href="#home" 
-          className="text-xl font-bold tracking-tight hover:text-accent transition-colors duration-300"
+          className="text-lg sm:text-xl font-bold tracking-tight hover:text-accent transition-colors duration-300"
         >
           Wasif Qamar
         </Link>
 
-        {/* Desktop Nav */}
-        <ul className="hidden md:flex items-center space-x-8">
+        <ul className="hidden md:flex items-center space-x-6 lg:space-x-8">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.substring(1);
             return (
@@ -71,7 +69,6 @@ export default function Navbar() {
                   {link.name}
                 </Link>
                 
-                {/* Underline Animation */}
                 <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ${
                   isActive ? "w-full" : "w-0 group-hover:w-full"
                 }`} />
@@ -80,7 +77,6 @@ export default function Navbar() {
           })}
         </ul>
 
-        {/* Mobile Toggle */}
         <button
           className="md:hidden p-2 text-foreground-primary hover:text-accent transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -90,7 +86,6 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -100,7 +95,7 @@ export default function Navbar() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="md:hidden bg-background-primary/95 backdrop-blur-xl border-b border-foreground-primary/5 shadow-2xl overflow-hidden"
           >
-            <ul className="flex flex-col p-8 space-y-6">
+            <ul className="flex flex-col p-6 sm:p-8 space-y-4 sm:space-y-6">
               {navLinks.map((link, i) => (
                 <motion.li 
                   key={link.name}
@@ -110,7 +105,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    className={`text-xl font-bold transition-colors block ${
+                    className={`text-lg sm:text-xl font-bold transition-colors block ${
                       activeSection === link.href.substring(1) ? "text-accent" : "text-foreground-secondary hover:text-foreground-primary"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}

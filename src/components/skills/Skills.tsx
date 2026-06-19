@@ -74,9 +74,9 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-24 bg-background-primary relative overflow-hidden">
+    <section id="skills" className="py-20 sm:py-24 bg-background-primary relative overflow-hidden">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -90,7 +90,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-foreground-secondary text-lg max-w-2xl mx-auto"
+            className="text-foreground-secondary text-base sm:text-lg max-w-2xl mx-auto"
           >
             A comprehensive set of tools and technologies I use to build robust and intelligent systems.
           </motion.p>
@@ -101,7 +101,7 @@ export default function Skills() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
           {skillCategories.map((category) => (
             <SkillCard key={category.title} category={category} />
@@ -144,27 +144,26 @@ function SkillCard({ category }: { category: any }) {
         scale: rotate.x !== 0 ? 1.02 : 1
       }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="p-8 rounded-2xl bg-background-secondary border border-foreground-primary/5 hover:border-accent/30 transition-all group relative overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgba(199,162,124,0.1)] transform-gpu"
+      className="p-6 sm:p-8 rounded-2xl bg-background-secondary border border-foreground-primary/5 hover:border-accent/30 transition-all group relative overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgba(199,162,124,0.1)] transform-gpu"
       style={{ perspective: "1000px" }}
     >
-      {/* Decorative corner element */}
-      <div className="absolute top-0 right-0 w-16 h-16 bg-accent/5 rounded-bl-[4rem] group-hover:bg-accent/10 transition-colors" />
+      <div className="absolute top-0 right-0 w-14 h-14 sm:w-16 sm:h-16 bg-accent/5 rounded-bl-[3.5rem] sm:rounded-bl-[4rem] group-hover:bg-accent/10 transition-colors" />
       
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
         <motion.div 
           whileHover={{ scale: 1.2, rotate: 10 }}
-          className={`p-3 rounded-xl bg-background-primary shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:shadow-accent/10 ${category.color}`}
+          className={`p-2.5 sm:p-3 rounded-xl bg-background-primary shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:shadow-accent/10 ${category.color}`}
         >
           {category.icon}
         </motion.div>
-        <h3 className="font-bold text-xl group-hover:text-accent transition-colors duration-300">{category.title}</h3>
+        <h3 className="font-bold text-lg sm:text-xl group-hover:text-accent transition-colors duration-300">{category.title}</h3>
       </div>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-1.5 sm:gap-2">
         {category.skills.map((skill: string) => (
           <motion.span
             key={skill}
             whileHover={{ scale: 1.05, y: -2 }}
-            className="px-3 py-1 text-sm font-medium rounded-full bg-background-primary text-foreground-secondary border border-foreground-primary/5 hover:border-accent/50 hover:text-accent transition-all cursor-default"
+            className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-background-primary text-foreground-secondary border border-foreground-primary/5 hover:border-accent/50 hover:text-accent transition-all cursor-default"
           >
             {skill}
           </motion.span>

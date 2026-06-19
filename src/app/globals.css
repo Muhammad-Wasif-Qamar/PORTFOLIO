@@ -9,7 +9,6 @@
   --color-accent-hover: #B8936D;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-geist: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   --animate-float: float 6s ease-in-out infinite;
 
@@ -19,51 +18,43 @@
   }
 }
 
-:root {
-  --background-primary: #FAFAF9;
-  --background-secondary: #F1F1EF;
-  --foreground-primary: #1C1C1C;
-  --foreground-secondary: #5A5A5A;
-  --accent: #C7A27C;
-}
-
-body {
-  color: var(--foreground-primary);
-  background: var(--background-primary);
-  font-family: var(--font-inter), sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+
+  body {
+    color: var(--foreground-primary);
+    background: var(--background-primary);
+    font-family: var(--font-inter), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer components {
   .section-container {
-    @apply max-w-7xl mx-auto px-6 py-24;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
   .heading-xl {
-    @apply text-5xl md:text-7xl font-bold tracking-tight mb-6;
+    @apply text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6;
   }
   
   .heading-lg {
-    @apply text-3xl md:text-5xl font-semibold tracking-tight mb-4;
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-4;
   }
   
   .text-body {
-    @apply text-lg text-foreground-secondary leading-relaxed max-w-2xl;
+    @apply text-base sm:text-lg text-foreground-secondary leading-relaxed max-w-2xl;
   }
   
   .btn-primary {
-    @apply inline-flex items-center px-8 py-3 rounded-full bg-foreground-primary text-background-primary transition-all hover:opacity-90 active:scale-95;
+    @apply inline-flex items-center px-6 sm:px-8 py-3 rounded-full bg-foreground-primary text-background-primary transition-all hover:opacity-90 active:scale-95;
   }
   
   .btn-secondary {
-    @apply inline-flex items-center px-8 py-3 rounded-full border border-foreground-primary/10 transition-all hover:bg-background-secondary active:scale-95;
+    @apply inline-flex items-center px-6 sm:px-8 py-3 rounded-full border border-foreground-primary/10 transition-all hover:bg-background-secondary active:scale-95;
   }
 }
 
