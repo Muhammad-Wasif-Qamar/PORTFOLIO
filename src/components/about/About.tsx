@@ -16,6 +16,11 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
+          <div className="flex items-center gap-2 mb-4">
+              <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest">
+                About Me
+              </span>
+            </div>
             <h2 className="heading-lg">Building Intelligent Solutions</h2>
             <div className="w-20 h-1 bg-accent mb-6 sm:mb-8 rounded-full" />
             <p className="text-body mb-4 sm:mb-6">
