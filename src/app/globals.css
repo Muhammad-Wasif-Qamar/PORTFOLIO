@@ -61,7 +61,7 @@
 .radial-highlight {
   background: radial-gradient(
     600px circle at var(--mouse-x) var(--mouse-y),
-    rgba(199, 162, 124, 0.05),
+    rgba(199, 162, 124, 0.12),
     transparent 40%
   );
 }

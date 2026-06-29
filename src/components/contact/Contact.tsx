@@ -49,7 +49,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-24 bg-background-secondary overflow-hidden relative">
+    <section id="contact" className="py-20 sm:py-24 pb-32 sm:pb-40 bg-background-secondary overflow-hidden relative">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
           <motion.div

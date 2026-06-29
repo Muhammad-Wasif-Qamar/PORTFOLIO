@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import Link from "next/link";
-import { Github, Linkedin, ArrowRight, Download, Mail } from "lucide-react";
+import { Github, Linkedin, ArrowRight, Download, Mail, Sparkles } from "lucide-react";
 import NeuralNetwork from "@/components/animations/NeuralNetwork";
 import DataNetworkBackground from "@/components/animations/DataNetworkBackground";
 
@@ -134,8 +134,9 @@ export default function Hero() {
                 transition: { delay: 0.5, duration: 0.8, ease: "easeOut" }
               }
             }}
-            className="inline-block mb-6 sm:mb-8 px-3 sm:px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 shadow-sm"
+            className="inline-flex items-center gap-2 mb-6 sm:mb-8 px-3 sm:px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 shadow-sm hover:bg-accent/15 transition-all"
           >
+            <Sparkles size={14} className="text-accent" />
             <span className="text-xs sm:text-sm font-bold tracking-[0.1em] uppercase text-accent">AI Engineer & Full-Stack Developer</span>
           </motion.div>
 
