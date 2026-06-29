@@ -33,7 +33,7 @@ export default function DataNetworkBackground() {
       ctx.clearRect(0, 0, width, height);
       
       // Draw Grid
-      ctx.strokeStyle = "rgba(28, 28, 28, 0.02)"; // Very faint primary text color
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.02)"; // Very faint primary text color (white for dark theme)
       ctx.lineWidth = 1;
       
       for (let x = 0; x < width; x += gridSize) {
