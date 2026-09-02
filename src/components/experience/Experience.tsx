@@ -32,7 +32,7 @@ const experience = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 sm:py-24 bg-background-primary relative overflow-hidden">
+    <section id="experience" className="py-20 sm:py-24 bg-background-secondary relative overflow-hidden">
       <div className="absolute top-1/2 left-0 text-[8rem] sm:text-[12rem] font-bold text-foreground-primary/[0.02] select-none pointer-events-none -ml-12 sm:-ml-20 -translate-y-1/2 -rotate-90">
         JOURNEY
       </div>

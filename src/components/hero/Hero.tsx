@@ -3,9 +3,27 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import Link from "next/link";
-import { Github, Linkedin, ArrowRight, Download, Mail, Sparkles } from "lucide-react";
-import NeuralNetwork from "@/components/animations/NeuralNetwork";
+import { ArrowRight, Download, Mail, Sparkles, Brain, Code2, GitGraph } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 import DataNetworkBackground from "@/components/animations/DataNetworkBackground";
+
+const focusAreas = [
+  {
+    icon: Brain,
+    title: "AI Engineering",
+    desc: "NLP pipelines and machine learning models that turn raw, unstructured data into structured intelligence.",
+  },
+  {
+    icon: Code2,
+    title: "Full-Stack Development",
+    desc: "Modern, scalable web applications built with Next.js, React, and robust backend APIs.",
+  },
+  {
+    icon: GitGraph,
+    title: "Knowledge Graphs",
+    desc: "Entity and relation extraction that maps hidden connections inside complex datasets.",
+  },
+];
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -48,7 +66,7 @@ export default function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.12,
         delayChildren: 0.2,
       },
     },
@@ -111,27 +129,20 @@ export default function Hero() {
         <div className="absolute inset-0 radial-highlight pointer-events-none opacity-40" />
       </div>
 
-      <div className="section-container relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="section-container relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="lg:col-span-7 text-center lg:text-left"
+          className="max-w-4xl mx-auto lg:mx-0 text-center lg:text-left"
         >
-          <motion.h1 
-            variants={itemVariants}
-            className="text-foreground-primary text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight mb-4 leading-[1.1]"
-          >
-            Wasif Qamar
-          </motion.h1>
-
           <motion.div 
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { 
                 opacity: 1, 
                 y: 0,
-                transition: { delay: 0.5, duration: 0.8, ease: "easeOut" }
+                transition: { duration: 0.8, ease: "easeOut" }
               }
             }}
             className="inline-flex items-center gap-2 mb-6 sm:mb-8 px-3 sm:px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 shadow-sm hover:bg-accent/15 transition-all"
@@ -140,11 +151,29 @@ export default function Hero() {
             <span className="text-xs sm:text-sm font-bold tracking-[0.1em] uppercase text-accent">AI Engineer & Full-Stack Developer</span>
           </motion.div>
 
+          <motion.h1 
+            variants={itemVariants}
+            className="text-foreground-primary text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 leading-[1.05]"
+          >
+            Wasif Qamar
+          </motion.h1>
+
+          <motion.p
+            variants={itemVariants}
+            className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-6 leading-tight"
+          >
+            I turn <span className="text-accent">complex data</span> into{" "}
+            <span className="text-accent">intelligent products</span>.
+          </motion.p>
+
           <motion.p 
             variants={itemVariants}
-            className="text-foreground-secondary text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 mb-8 sm:mb-12 leading-relaxed"
+            className="text-foreground-secondary text-base sm:text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 mb-10 sm:mb-12 leading-relaxed"
           >
-            I build intelligent systems and scalable web applications, combining AI engineering with modern full-stack development to transform complex data into practical products.
+            I build intelligent systems and scalable web applications — combining AI engineering
+            with modern full-stack development. From NLP pipelines that extract meaning from
+            unstructured data to production-ready apps, I ship work that is both technically
+            rigorous and genuinely useful.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
@@ -170,6 +199,24 @@ export default function Hero() {
               </Link>
             )}
           </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left"
+          >
+            {focusAreas.map((area) => (
+              <div
+                key={area.title}
+                className="group p-5 rounded-2xl bg-background-primary/60 backdrop-blur-md border border-foreground-primary/5 hover:border-accent/30 transition-all"
+              >
+                <div className="p-2 rounded-lg bg-accent/10 text-accent w-max mb-3 group-hover:scale-110 transition-transform">
+                  <area.icon size={18} />
+                </div>
+                <h3 className="text-sm font-bold text-foreground-primary mb-1.5">{area.title}</h3>
+                <p className="text-xs text-foreground-secondary leading-relaxed">{area.desc}</p>
+              </div>
+            ))}
+          </motion.div>
           
           <motion.div variants={itemVariants} className="mt-8 sm:mt-12 flex gap-4 sm:gap-6 justify-center lg:justify-start">
             <Link
@@ -179,17 +226,17 @@ export default function Hero() {
               className="text-foreground-secondary/60 hover:text-accent transition-colors p-2 hover:bg-accent/5 rounded-lg"
               aria-label="LinkedIn"
             >
-              <Linkedin size={24} />
+              <LinkedinIcon size={24} />
             </Link>
-            <Link
-              href="https://github.com/Muhammad-Wasif-Qamar"  
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground-secondary/60 hover:text-accent transition-colors p-2 hover:bg-accent/5 rounded-lg"
-              aria-label="GitHub"
-            >
-              <Github size={24} />
-            </Link>
+              <Link
+                href="https://github.com/Muhammad-Wasif-Qamar"  
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground-secondary/60 hover:text-accent transition-colors p-2 hover:bg-accent/5 rounded-lg"
+                aria-label="GitHub"
+              >
+                <GithubIcon size={24} />
+              </Link>
             <Link
               href="mailto:hello@wasifqamar.com"
               className="text-foreground-secondary/60 hover:text-accent transition-colors p-2 hover:bg-accent/5 rounded-lg"
@@ -198,69 +245,6 @@ export default function Hero() {
               <Mail size={24} />
             </Link>
           </motion.div>
-        </motion.div>
-        
-        <motion.div 
-          variants={itemVariants}
-          initial={{ opacity: 0, scale: 0.9, x: 20 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 1.2, delay: 0.5 }}
-          className="lg:col-span-5 hidden lg:flex justify-center relative h-[400px] lg:h-[450px] w-full"
-        >
-          <div className="relative w-full h-full">
-            <div className="absolute inset-0 bg-accent/15 rounded-full blur-[120px] -z-10" />
-            
-            <div className="w-full h-full bg-background-primary/30 backdrop-blur-[2px] rounded-3xl border border-accent/10 shadow-xl overflow-hidden group hover:border-accent/30 transition-all relative">
-              <NeuralNetwork />
-              
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="relative">
-                  <motion.div 
-                    animate={{ 
-                      scale: [1, 1.2, 1],
-                      opacity: [0.3, 0.6, 0.3]
-                    }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute inset-0 bg-accent/20 rounded-full blur-2xl"
-                  />
-                  
-                  <motion.div 
-                    animate={{ 
-                      scale: [1, 1.03, 1],
-                    }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-background-primary/80 backdrop-blur-md border-2 border-accent/30 flex items-center justify-center shadow-[0_0_40px_rgba(199,162,124,0.25)] z-10"
-                  >
-                    <span className="text-xs sm:text-sm font-bold text-accent uppercase tracking-widest text-center px-4">AI Systems</span>
-                  </motion.div>
-                </div>
-              </div>
-              
-              <motion.div 
-                animate={{ y: [0, -12, 0], x: [0, 5, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-6 sm:top-12 right-6 sm:right-12 px-3 sm:px-4 py-2 rounded-xl bg-background-primary/90 border border-accent/20 shadow-lg backdrop-blur-md z-20"
-              >
-                <span className="text-xs font-bold text-accent">Neural Networks</span>
-              </motion.div>
-              
-              <motion.div 
-                animate={{ y: [0, 12, 0], x: [0, -5, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-12 sm:bottom-24 left-6 sm:left-12 px-3 sm:px-4 py-2 rounded-xl bg-background-primary/90 border border-accent/20 shadow-lg backdrop-blur-md z-20"
-              >
-                <span className="text-xs font-bold text-accent">Full-Stack Apps</span>
-              </motion.div>
-
-              <motion.div 
-                animate={{ y: [0, -8, 0], x: [0, -8, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                className="absolute top-16 sm:top-24 left-8 sm:left-16 px-3 sm:px-4 py-2 rounded-xl bg-background-primary/90 border border-accent/20 shadow-lg backdrop-blur-md z-20"
-              >
-                <span className="text-xs font-bold text-accent">Scalable Systems</span>
-              </motion.div>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>

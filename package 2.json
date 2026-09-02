@@ -16,22 +16,18 @@
     "react": "latest",
     "react-dom": "latest",
     "resend": "^6.9.4",
-    "tailwind-merge": "latest",
-    "three": "latest",
-    "@react-three/fiber": "latest",
-    "@react-three/drei": "latest"
+    "tailwind-merge": "latest"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.1",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "@types/three": "latest",
-    "autoprefixer": "latest",
+    "autoprefixer": "^10.5.4",
     "eslint": "latest",
     "eslint-config-next": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^4.3.3",
     "typescript": "latest"
   }
 }

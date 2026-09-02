@@ -9,13 +9,13 @@ const skillCategories = [
     title: "Programming Languages",
     icon: <Code2 size={24} />,
     skills: ["Python", "TypeScript", "C++", "Dart"],
-    color: "bg-[#E8D8C3]/10 text-[#C7A27C]",
+    color: "bg-[#00F5FF]/10 text-[#00F5FF]",
   },
   {
     title: "Web & App Development",
     icon: <Code2 size={24} />,
     skills: ["React", "Next.js", "Node.js", "Flutter", "REST APIs"],
-    color: "bg-[#E8D8C3]/10 text-[#C7A27C]",
+    color: "bg-[#00F5FF]/10 text-[#00F5FF]",
   },
   {
     title: "Machine Learning",
@@ -27,7 +27,7 @@ const skillCategories = [
       "Model Evaluation",
       "Neural Networks (Basics)"
     ],
-    color: "bg-[#E8D8C3]/10 text-[#C7A27C]",
+    color: "bg-[#00F5FF]/10 text-[#00F5FF]",
   },
   {
     title: "Natural Language Processing",
@@ -39,13 +39,13 @@ const skillCategories = [
       "Named Entity Recognition",
       "Text Classification"
     ],
-    color: "bg-[#E8D8C3]/10 text-[#C7A27C]",
+    color: "bg-[#00F5FF]/10 text-[#00F5FF]",
   },
   {
     title: "Cyber Threat Intelligence",
     icon: <ShieldCheck size={24} />,
     skills: ["STIX/TAXII", "MISP", "OSINT", "MITRE ATT&CK"],
-    color: "bg-[#E8D8C3]/10 text-[#C7A27C]",
+    color: "bg-[#00F5FF]/10 text-[#00F5FF]",
   },
   {
     title: "DevOps & Tools",
@@ -58,7 +58,7 @@ const skillCategories = [
       "TensorFlow",
       "Scikit-learn"
     ],
-    color: "bg-[#E8D8C3]/10 text-[#C7A27C]",
+    color: "bg-[#00F5FF]/10 text-[#00F5FF]",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-20 sm:py-24 bg-background-primary relative overflow-hidden">
+    <section id="skills" className="py-20 sm:py-24 bg-background-secondary relative overflow-hidden">
       <div className="section-container">
         <div className="text-center mb-12 sm:mb-16">
           <motion.h2 
@@ -144,7 +144,7 @@ function SkillCard({ category }: { category: any }) {
         scale: rotate.x !== 0 ? 1.02 : 1
       }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="p-6 sm:p-8 rounded-2xl bg-background-secondary border border-foreground-primary/5 hover:border-accent/30 transition-all group relative overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgba(199,162,124,0.1)] transform-gpu"
+      className="p-6 sm:p-8 rounded-2xl bg-background-secondary border border-foreground-primary/5 hover:border-accent/30 transition-all group relative overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgba(0,245,255,0.12)] transform-gpu"
       style={{ perspective: "1000px" }}
     >
       <div className="absolute top-0 right-0 w-14 h-14 sm:w-16 sm:h-16 bg-accent/5 rounded-bl-[3.5rem] sm:rounded-bl-[4rem] group-hover:bg-accent/10 transition-colors" />

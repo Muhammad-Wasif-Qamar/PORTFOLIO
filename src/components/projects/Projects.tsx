@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, ExternalLink, ArrowRight, Brain, Shield, Code, Database, Cpu, Activity, Info } from "lucide-react";
+import { ExternalLink, ArrowRight, Brain, Shield, Code, Database, Cpu, Activity, Info } from "lucide-react";
+import { GithubIcon } from "@/components/icons/BrandIcons";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -22,8 +23,8 @@ const projects = [
     tags: ["Python", "NLP", "Transformers", "spaCy", "Knowledge Graphs"],
     github: null,
     link: null,
-    gradient: "from-[#E8D8C3] to-[#C7A27C]",
-    icon: <Brain className="text-[#A67B5B]" size={20} />,
+    gradient: "from-[#12082E] to-[#00F5FF]",
+    icon: <Brain className="text-[#00F5FF]" size={20} />,
   }
 ];
 
@@ -121,7 +122,7 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
         scale: rotate.x !== 0 ? 1.02 : 1,
         y: rotate.x !== 0 ? -10 : 0
       }}
-      className="group bg-background-primary rounded-3xl border border-foreground-primary/5 overflow-hidden transition-all duration-500 hover:shadow-[0_30px_60px_rgba(199,162,124,0.12)] flex flex-col transform-gpu relative"
+      className="group bg-background-primary rounded-3xl border border-foreground-primary/5 overflow-hidden transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,245,255,0.14)] flex flex-col transform-gpu relative"
       style={{ perspective: "1000px" }}
     >
       <div className="absolute inset-0 border-2 border-transparent group-hover:border-accent/20 transition-colors duration-500 rounded-3xl pointer-events-none z-20" />
@@ -191,9 +192,9 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
               target="_blank"
               className="flex items-center gap-2 text-xs sm:text-sm font-bold hover:text-accent transition-all group/link"
             >
-              <motion.div whileHover={{ rotate: 15 }}>
-                <Github size={14} />
-              </motion.div>
+                <motion.div whileHover={{ rotate: 15 }}>
+                  <GithubIcon size={14} />
+                </motion.div>
               <span className="relative">
                 Source Code
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover/link:w-full transition-all duration-300" />
@@ -201,7 +202,7 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
             </Link>
           ) : (
             <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-foreground-secondary/50 cursor-not-allowed">
-              <Github size={14} />
+              <GithubIcon size={14} />
               <span>Repository: Coming Soon</span>
             </div>
           )}

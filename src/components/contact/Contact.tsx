@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Send } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 import { useState } from "react";
 
 export default function Contact() {
@@ -83,9 +84,9 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 sm:gap-4 group hover:text-accent transition-colors p-3 sm:p-4 rounded-2xl bg-background-primary border border-foreground-primary/5 shadow-sm hover:shadow-lg"
               >
-                <div className="p-2.5 sm:p-3 rounded-xl bg-background-secondary text-accent group-hover:scale-110 transition-transform">
-                  <Github size={20} />
-                </div>
+                  <div className="p-2.5 sm:p-3 rounded-xl bg-background-secondary text-accent group-hover:scale-110 transition-transform">
+                    <GithubIcon size={20} />
+                  </div>
                 <div>
                   <p className="text-[10px] sm:text-xs font-bold text-foreground-secondary uppercase tracking-widest mb-1">GitHub</p>
                   <p className="text-base sm:text-lg font-bold">github.com/Muhammad-Wasif-Qamar</p>
@@ -99,7 +100,7 @@ export default function Contact() {
                 className="flex items-center gap-3 sm:gap-4 group hover:text-accent transition-colors p-3 sm:p-4 rounded-2xl bg-background-primary border border-foreground-primary/5 shadow-sm hover:shadow-lg"
               >
                 <div className="p-2.5 sm:p-3 rounded-xl bg-background-secondary text-accent group-hover:scale-110 transition-transform">
-                  <Linkedin size={20} />
+                  <LinkedinIcon size={20} />
                 </div>
                 <div>
                   <p className="text-[10px] sm:text-xs font-bold text-foreground-secondary uppercase tracking-widest mb-1">LinkedIn</p>

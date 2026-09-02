@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background-primary: #0A0A0A;
-  --color-background-secondary: #141414;
-  --color-foreground-primary: #FFFFFF;
-  --color-foreground-secondary: #9CA3AF;
-  --color-accent: #C7A27C;
-  --color-accent-hover: #B8936D;
+  --color-background-primary: #0D0221;
+  --color-background-secondary: rgba(13, 2, 33, 0.5);
+  --color-foreground-primary: #F4F6FF;
+  --color-foreground-secondary: #A5B4D4;
+  --color-accent: #00F5FF;
+  --color-accent-hover: #66F9FF;
+  --color-accent-secondary: #B026FF;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
@@ -25,7 +26,7 @@
 
   body {
     color: var(--foreground-primary);
-    background: var(--background-primary);
+    background: #05010D;
     font-family: var(--font-inter), sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -50,18 +51,18 @@
   }
   
   .btn-primary {
-    @apply inline-flex items-center px-6 sm:px-8 py-3 rounded-full bg-foreground-primary text-background-primary transition-all hover:opacity-90 active:scale-95;
+    @apply inline-flex items-center px-6 sm:px-8 py-3 rounded-full bg-accent text-background-primary font-semibold transition-all hover:bg-accent-hover active:scale-95;
   }
   
   .btn-secondary {
-    @apply inline-flex items-center px-6 sm:px-8 py-3 rounded-full border border-foreground-primary/10 transition-all hover:bg-background-secondary active:scale-95;
+    @apply inline-flex items-center px-6 sm:px-8 py-3 rounded-full border border-accent/30 transition-all hover:bg-accent/10 active:scale-95;
   }
 }
 
 .radial-highlight {
   background: radial-gradient(
     600px circle at var(--mouse-x) var(--mouse-y),
-    rgba(199, 162, 124, 0.12),
+    rgba(0, 245, 255, 0.10),
     transparent 40%
   );
 }

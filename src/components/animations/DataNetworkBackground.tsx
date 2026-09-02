@@ -51,7 +51,7 @@ export default function DataNetworkBackground() {
       }
 
       // Draw Particles
-      ctx.fillStyle = "rgba(199, 162, 124, 0.15)"; // Accent color
+      ctx.fillStyle = "rgba(0, 245, 255, 0.15)"; // Accent color
       
       for (let i = 0; i < particleCount; i++) {
         const p = particles[i];
@@ -75,7 +75,7 @@ export default function DataNetworkBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy);
           
           if (dist < 100) {
-            ctx.strokeStyle = `rgba(199, 162, 124, ${0.1 * (1 - dist / 100)})`;
+            ctx.strokeStyle = `rgba(0, 245, 255, ${0.1 * (1 - dist / 100)})`;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);

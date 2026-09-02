@@ -29,7 +29,7 @@ export default function NeuralNetwork() {
           const dist = Math.sqrt(dx*dx+dy*dy);
           if (dist<120){
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(199,162,124,${0.15*(1-dist/120)})`;
+            ctx.strokeStyle = `rgba(0,245,255,${0.15*(1-dist/120)})`;
             ctx.lineWidth =1;
             ctx.moveTo(particles[i].x,particles[i].y);
             ctx.lineTo(particles[j].x,particles[j].y);
@@ -45,7 +45,7 @@ export default function NeuralNetwork() {
         if (p.y<0||p.y>height) p.vy*=-1;
         ctx.beginPath();
         ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-        ctx.fillStyle = Math.random()>0.7? "#C7A27C":"#4A4A4A";
+        ctx.fillStyle = Math.random()>0.7? "#00F5FF":"#3A3A5A";
         ctx.globalAlpha = Math.random()*0.5+0.2;
         ctx.fill();
         ctx.globalAlpha = 1;
